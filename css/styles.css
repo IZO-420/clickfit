@@ -1,0 +1,549 @@
+* {
+  all: unset;
+}
+
+body {
+  background-color: #18171a;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-title {
+  font-family: Outfit;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  padding: 1rem 5rem;
+  z-index: 100;
+  position: sticky;
+}
+.logo {
+    font-family: Outfit;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #ff5401;
+}
+
+nav {
+  gap: 5vw;
+}
+
+nav a {
+  font-size: 1rem;
+  font-family: Outfit;
+  font-weight: 500;
+  color: #fff;
+}
+
+.btn-primary {
+  background-image: url(../assets/images/btn-background.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  font-size: 2rem;
+  font-family: Outfit;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  color: #fff;
+}
+
+#hero-section {
+  align-items: flex-start !important;
+  gap: 3vh;
+  margin-top: -8vh;
+  height: 100vh;
+  padding: 0vh 5vw;
+}
+
+#hero-section video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  object-fit: cover;
+  width: 99vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+#hero-section .body {
+  position: relative;
+  z-index: 10;
+  width: 40rem;
+  align-items: flex-start;
+  gap: 3vh;
+}
+
+#hero-section .body h1 {
+  font-family: Orbitron;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 5rem;
+}
+
+#hero-section .body h1 span {
+  -webkit-text-stroke: 0.1rem #ff5401;
+  border-width: 0.5rem;
+  border-style: solid;
+  color: transparent;
+}
+
+#hero-section .body p {
+  font-family: Outfit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+#sports-section {
+  gap: 10vh;
+  padding: 6rem;
+}
+
+#sports-section .body {
+  gap: 4vw;
+}
+
+.sport-type-card {
+  display: flex;
+  border-top-left-radius: 4rem;
+  flex: 1;
+  height: 30rem;
+  justify-content: flex-start;
+  align-items: flex-end;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); */
+  transition: all 500ms ease;
+}
+
+.sport-type-card:hover {
+  flex: 4;
+}
+
+.sport-type-card .card-body {
+  gap: 4vw;
+  justify-content: flex-start;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(24, 23, 26, 1), rgba(0, 0, 0, 0));
+  width: 100%;
+  height: 40%;
+  align-items: flex-end;
+}
+
+.sport-type-card .card-body h3 {
+  font-family: Outfit;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #fff;
+}
+
+.sport-type-card .card-body p {
+  display: none;
+  opacity: 0;
+  font-family: Outfit;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: #fff;
+  transition: all 300ms ease;
+}
+
+.sport-type-card:hover .card-body p {
+  display: flex;
+  opacity: 1;
+}
+
+#lifeStyle{
+    position: relative;
+    justify-content: flex-start;
+    gap: 5rem;
+    padding: 5vh 28vw;
+}
+
+#lifeStyle p{
+    font-family: Outfit;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+}
+
+.image-container{
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 35%;
+    background-image: url(../assets/images/image-bg.svg);
+    padding: 0.5rem;
+    position: relative;
+    z-index: 10;
+}
+
+#lifeStyle img{
+width:28rem;
+}
+
+.line-wide-1{
+    height: 3rem;
+    width: 12rem;
+    position: absolute;
+    right: 0;
+    bottom: 5rem;
+    background-color: #ff5401;
+    opacity: 0.2;
+}
+.line-wide-2{
+    height: 3rem;
+    width: 25rem;
+    position: absolute;
+    right: 0;
+    bottom: 1rem;
+    background-color: #ff5401;
+    opacity: 0.2;
+}
+
+#classes {
+  justify-content: flex-start;
+  gap: 5rem;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url(../assets/images/classes-bg.png);
+  padding: 4vw;
+}
+
+#classes .body {
+  gap: 4vw;
+}
+
+#classes .body .product-card {
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+#classes .body .product-card > .img-container {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 35%;
+  background-image: url(../assets/images/image-bg.svg);
+  padding: 0.5rem;
+  width: 100%;
+}
+
+#classes .body .product-card > .img-container img {
+  width: 100%;
+  height: 30vh;
+}
+#classes .body .product-card .header .right,
+#classes .body .product-card .header .left {
+  gap: 1rem;
+}
+
+#classes .body .product-card .header {
+  justify-content: space-between;
+  width: 100%;
+}
+
+#classes .body .product-card .header span {
+  background-color: #ff5401;
+  border-radius: 1rem;
+  width: .7rem;
+  height: .7rem;
+}
+
+#classes .body .product-card .header h4 {
+  font-family: Outfit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+#classes .body .product-card .header .left .img {
+  width: 2rem;
+  height: 2rem;
+}
+
+#classes .body .product-card .card-body {
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+  width: 100%;
+}
+
+#classes .body .product-card .card-body .title {
+  justify-content: space-between;
+  width: 100%;
+}
+#classes .body .product-card .card-body .title h3 {
+  font-family: Outfit;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+#classes .body .product-card .card-body .title p {
+  font-family: Outfit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap:.5rem
+}
+
+#classes .body .product-card .card-body .instructor,
+#classes .body .product-card .card-body li {
+  font-family: Outfit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+}
+
+#classes .body .product-card .card-body ul {
+  list-style: none;
+  padding-left: 0;
+  display: contents;
+}
+
+#classes .body .product-card .card-body li {
+  position: relative;
+  padding-left: 20px;
+}
+
+#classes .body .product-card .card-body li::before {
+  content: "•";
+  color: "#fff";
+  font-size: 1.2em;
+  position: absolute;
+  left: 0;
+}
+#classes .body .product-card .card-body .footer {
+  justify-content: space-between;
+  width: 100%;
+}
+.btn-secondary {
+  font-size: 1.2rem;
+  font-family: Outfit;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: #ff5401;
+  transform: skew(-20deg, 0deg);
+}
+
+.btn-transparent {
+  font-size: 1.2rem;
+  font-family: Outfit;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: transparent;
+  transform: skew(-20deg, 0deg);
+  border-style: solid;
+  border-width: 0.1rem;
+  border-color: #fff;
+}
+
+.btn-secondary span,
+.btn-transparent span {
+  transform: skew(20deg, 0deg);
+}
+
+
+#instructors{
+padding:3rem;
+gap: 2rem;
+position: relative;
+}
+
+#instructors .body{
+    gap: 2rem;
+    }
+    
+.line-wide-3{
+    height: 3rem;
+    width: 12rem;
+    position: absolute;
+    left: 0;
+    bottom: 9rem;
+    background-color: #ff5401;
+    opacity: 0.2;
+}
+.line-wide-4{
+    height: 3rem;
+    width: 25rem;
+    position: absolute;
+    left: 0;
+    bottom: 5rem;
+    background-color: #ff5401;
+    opacity: 0.2;
+}
+
+#instructors .card{
+    gap:1rem
+}
+#instructors .card:hover img{
+    outline: solid #ff5401 .1rem;
+}
+#instructors .card h3{
+    font-size: 1.5rem;
+    font-family: Outfit;
+    font-weight: 500;
+    color: #fff;
+}
+
+#instructors .card p{
+    font-size: 0.7rem;
+    font-family: Outfit;
+    font-weight: 400;
+    color: #fff;
+}
+
+#faq{
+padding:4rem
+}
+
+
+  .accordion-header {
+color: #fff;
+    padding: 1.2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.3s;
+    font-family: 'Outfit';
+    width: 70vw;
+    position: relative;
+  }
+
+  .accordion-header::after {
+    content: "+";
+    font-size: 1rem;
+    transition: transform 0.3s;
+  }
+
+  .accordion-content {
+    padding: 1rem;
+    background: rgba(255,94,0,0.3);
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  transform: skew(-20deg, 0deg);
+  width: 70vw;
+  }
+.accordion-divider{
+    position: absolute;
+    left:0;
+    bottom: 0;
+    height:.1rem;
+    width:72vw;
+    background-color: #fff;
+    transition: width 0.3s ease-out;
+
+}
+.accordion-divider.active{
+    width:85vw;
+}
+  .accordion-content p{
+    font-size:1rem;
+    font-family: Outfit;
+    font-weight: 400;
+    color: #fff;
+  transform: skew(20deg, 0deg);
+  }
+
+  .active .accordion-content {
+    display: block;
+  }
+
+  .active .accordion-header::after {
+    transform: rotate(180deg);
+  }
+
+
+
+
+
+
+footer{
+    gap: 5rem;
+    background-image: url(../assets/images/footer-bg.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding:2rem;
+}
+
+footer img{
+    width:8rem;
+}
+
+footer .footer-text{
+width:70vw;
+font-size: 1.2rem;
+font-family: Outfit;
+font-weight: 500;
+color: #fff;
+text-align: center;
+}
+footer .social-media{
+gap:1vw;
+}
+
+footer .social-media img{
+    width:2rem;
+    height:2rem;
+}
+footer hr{
+    width:70vw;
+    height: .1rem;
+    background-color: #fff;
+}
+
+footer p{
+    font-size: 1.2rem;
+font-family: Outfit;
+font-weight: 500;
+color: #fff;
+}
+
+a{
+    cursor: pointer;
+}
+
+@keyframes vibrate {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-3px); }
+    40% { transform: translateX(3px); }
+    60% { transform: translateX(-3px); }
+    80% { transform: translateX(3px); }
+    100% { transform: translateX(0); }
+  }
+
+  .vibrate {
+    animation: vibrate 0.3s ease-in-out;
+    color: red !important; /* Change color to red */
+  }
