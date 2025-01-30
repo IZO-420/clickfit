@@ -60,7 +60,7 @@ Nav Styles
     position: fixed;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(24, 23, 26, 1), rgba(0, 0, 0, 0.7));
+    background: linear-gradient(to top, rgba(24, 23, 26, 1), rgba(0, 0, 0, 1));
     top: -100%; left: 0; right: 0; bottom: 0;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
@@ -113,4 +113,28 @@ Nav Styles
     top: 0;
     transform: scale(1);
   } 
+
+  #dropArea {
+    width: 16rem;
+}
+
+.drop-1 {
+    display: none;
+  }
+  .drop-2 {
+    display: none;
+
+  }
+  .drop-3 {
+    display: none;
+
+  }
+  .drop-4 {
+    display: none;
+
+  }
+  .drop-5 {
+    display: none;
+
+  }
   }
