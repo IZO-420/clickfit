@@ -25,15 +25,14 @@ body {
   font-weight: 700;
   color: #fff;
   text-align: center;
-  transform: scale(0.8); /* Slightly smaller than its final size */
-  opacity: 0; /* Transparent */
+  transform: scale(0.8); 
+  opacity: 0; 
   transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
-/* Final state when the element is in the viewport */
 .section-title.zoomed-in {
-  transform: scale(1); /* Restore to original size */
-  opacity: 1; /* Fully opaque */
+  transform: scale(1); 
+  opacity: 1; 
 }
 
 header {
@@ -652,6 +651,7 @@ a {
   background-color: #ff5401;
   transition: all 0.3s ease-in-out;
 }
+
 
 .nav {
   display: none;
