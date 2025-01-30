@@ -3,11 +3,11 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <meta name="title" content="Click Fit">
+    <title>Click Fit</title>
     <meta name="description" content="Fitness Club">
     <meta name="author" content="Azlarab Oujdad">
     <meta name="robots" content="noindex, nofollow">
-
+    <meta name="referrer" content="no-referrer">
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
     <link rel="stylesheet" type="text/css" href="./css/small-styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
   <body>
     <header>
@@ -39,10 +40,10 @@
 <div class="nav">
   <div class="nav-wrapper">
     <nav class="nav-mobile">
-      <a href="#" id="vibratingLink"><span>HOME</span></a><br>
-      <a href="#" id="vibratingLink"><span>ABOUT</span></a><br>
-      <a href="#" id="vibratingLink"><span>WORK</span></a><br>
-      <a href="#" id="vibratingLink"><span>SERVICES</span></a>
+      <a href="#" id="vibratingLink"><span>Classes</span></a><br>
+      <a href="#" id="vibratingLink"><span>Team</span></a><br>
+      <a href="#" id="vibratingLink"><span>About Us</span></a><br>
+      <a href="#" id="vibratingLink"><span>Gallery</span></a>
     </nav>
   </div>
 </div>
@@ -55,20 +56,24 @@
       </video>
       <div class="flex-column body">
         <h1><span>Unleash</span> your Inner Athlete</h1>
-        <p>
+        <p class="sub-title">
           Get ready to sweat it out and achieve your fitness goals with our
           high-energy fitness classes! Our classes are designed to cater to all
           fitness levels and provide a fun and motivating environment to help
           you reach your peak performance.
         </p>
-        <a  id="vibratingLink" class="flex btn-secondary">Start free trial</a>
+        <div id="dropArea">
+          <p id="messageIndic">Drop an image here or click to browse</p>
+          <input id="fileInput" type="file" name="image" accept="image/*" />
+        </div>
+        <a class="flex btn-secondary uploadBtn">Upload your image</a>
       </div>
     </section>
     <section id="sports-section" class="flex-column">
       <h2 class="section-title">Find what moves you</h2>
       <div class="flex body">
         <div
-          class="sport-type-card"
+          class="sport-type-card fadein"
           style="background-image: url(./assets/images/gym.jpg)"
         >
           <div class="flex card-body">
@@ -81,7 +86,7 @@
           </div>
         </div>
         <div
-          class="sport-type-card"
+          class="sport-type-card fadein"
           style="background-image: url(./assets/images/zumba.jpg)"
         >
           <div class="flex card-body">
@@ -94,7 +99,7 @@
           </div>
         </div>
         <div
-          class="sport-type-card"
+          class="sport-type-card fadein"
           style="background-image: url(./assets/images/yoga.jpg)"
         >
           <div class="flex card-body">
@@ -107,7 +112,7 @@
           </div>
         </div>
         <div
-          class="sport-type-card"
+          class="sport-type-card fadein"
           style="background-image: url(./assets/images/martial-art.jpg)"
         >
           <div class="flex card-body">
@@ -125,7 +130,7 @@
       <div class="line-wide-1"></div>
       <div class="line-wide-2"></div>
       <h2 class="section-title">Fit for your lifestyle</h2>
-      <p>
+      <p class="fadein-top">
         Wake up with a sunrise meditation, sweat it out with lunchtime HIIT, or
         unwind with an evening flow. You’ll find movement for every mood with
         classes sorted by time, style, and skill level.
@@ -137,7 +142,7 @@
     <section id="classes" class="flex-column">
       <h2 class="section-title">Classes</h2>
       <div class="flex body">
-        <div class="flex-column product-card">
+        <div class="flex-column product-card fadein">
           <div class="img-container">
             <img src="./assets/images/yoga-product-1.jpg" />
           </div>
@@ -173,7 +178,7 @@
             </div>
           </div>
         </div>
-        <div class="flex-column product-card">
+        <div class="flex-column product-card fadein">
           <div class="img-container">
             <img src="./assets/images/fitness-product.jpg" />
           </div>
@@ -206,7 +211,7 @@
             </div>
           </div>
         </div>
-        <div class="flex-column product-card">
+        <div class="flex-column product-card fadein">
           <div class="img-container">
             <img src="./assets/images/yoga-product-2.jpg" />
           </div>
@@ -247,30 +252,31 @@
         <div class="line-wide-4"></div>
       <h2 class="section-title">Instructors</h2>
       <div class="flex body">
-        <div class="flex-column card">
+        <div class="flex-column card fadein">
           <img src="./assets/images/Jacob.png" />
           <h3>Jacob Jones</h3>
           <p>Gym trainer</p>
         </div>
-        <div class="flex-column card">
+        <div class="flex-column card fadein">
           <img src="./assets/images/Alex.png" />
           <h3>Leslie Alexander</h3>
           <p>Gym trainer</p>
         </div>
-        <div class="flex-column card">
+        <div class="flex-column card fadein">
           <img src="./assets/images/Cameron.png" />
           <h3>Cameron Williamson</h3>
           <p>Gym trainer</p>
         </div>
-        <div class="flex-column card">
+        <div class="flex-column card fadein">
           <img src="./assets/images/Jane.png" />
           <h3>Jane Cooper</h3>
           <p>Gym trainer</p>
         </div>
       </div>
     </section>
-    <section id="faq" class="flex-column">
-        <div class="accordion">
+    <section id="faq" class="flex-column fadein-top">
+      <h2 class="section-title">FAQ</h2>
+      <div class="accordion">
             <div class="accordion-item">
               <div class="accordion-header">What are your focus areas as a UI/UX agency?
                   <div class="accordion-divider"></div>
@@ -299,9 +305,29 @@
             </div>
           </div>
     </section>
+    <section id="addUser">
+      <h2 class="section-title">Add User</h2>
+      <div class="container">
+
+      <form id="form-data">
+        <input id="email" type="email" placeholder="Email" required ><br>
+        <input id="password" type="password" placeholder="Password" required><br>
+        <input type="submit" value="Sign in"><br>
+      </form>
+    
+      <div class="drops">
+        <div class="drop drop-1"></div>
+        <div class="drop drop-2"></div>
+        <div class="drop drop-3"></div>
+        <div class="drop drop-4"></div>
+        <div class="drop drop-5"></div>
+      </div>
+      </div>
+  
+    </section>
     <footer class="flex-column">
         <span class="logo" >Click Fit</span>
-      <p class="footer-text">
+      <p class="footer-text fadein-top">
         Join us today and experience the transformative power of our fitness
         classes. Don't wait to start your fitness journey. Take the first step
         towards a healthier, stronger you. Let's sweat, have fun, and make

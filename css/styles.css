@@ -25,6 +25,14 @@ body {
   font-weight: 700;
   color: #fff;
   text-align: center;
+  transform: scale(0.8); 
+  opacity: 0; 
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.section-title.zoomed-in {
+  transform: scale(1); 
+  opacity: 1; 
 }
 
 header {
@@ -52,6 +60,32 @@ nav a {
   font-family: Outfit;
   font-weight: 500;
   color: #fff;
+}
+
+nav a:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+.fadein {
+  opacity: 0;
+  transition: all 1.5s;
+  transform: translate(0, 100px);
+}
+
+.fadein.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.fadein-top {
+  opacity: 0;
+  transition: all 1.5s;
+  transform: translate(0, -100px);
+}
+
+.fadein-top.visible {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .btn-primary {
@@ -351,6 +385,7 @@ nav a {
   color: #fff;
   background-color: #ff5401;
   transform: skew(-20deg, 0deg);
+  transition: padding 0.4s ease;
 }
 
 .btn-transparent {
@@ -364,6 +399,20 @@ nav a {
   border-style: solid;
   border-width: 0.1rem;
   border-color: #fff;
+  transition: padding 0.4s ease;
+}
+
+
+.btn-secondary:hover,.btn-transparent:hover {
+  padding: 0.5rem 2rem;
+}
+
+.btn-secondary span,.btn-transparent span {
+  transition: opacity 0.3s ease;
+}
+
+.btn-secondary:hover span,.btn-transparent:hover span {
+  opacity: 0.8;
 }
 
 .btn-secondary span,
@@ -524,10 +573,25 @@ footer p {
   font-family: Outfit;
   font-weight: 500;
   color: #fff;
+  text-align: center;
 }
 
 a {
   cursor: pointer;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes vibrate {
@@ -556,10 +620,9 @@ a {
   color: red !important; /* Change color to red */
 }
 
-.p-h-2{
-  padding:0vh 2vw
+.p-h-2 {
+  padding: 0vh 2vw;
 }
-
 
 #toggle {
   display: none;
@@ -589,65 +652,255 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-.nav{
+
+.nav {
   display: none;
 }
-
+@media (min-width: 2000px) {
+  #hero-section video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 50vh;
+    z-index: 1;
+  }
+  #hero-section .body {
+    height: 100%;
+    width: 100%;
+  }
+}
 @media (max-width: 1025px) {
   header {
     padding: 1rem 2rem;
-}
+  }
 
   #hero-section .body {
-    padding: 0rem 20rem 0rem 5rem;
-}
-#classes .body .product-card > .img-container {
-  background-size: 100% 20%;
-}
+    padding: 0rem 10rem 0rem 5rem;
+  }
+  #classes .body .product-card > .img-container {
+    background-size: 100% 20%;
+  }
   #classes .body .product-card > .img-container img {
     width: 15rem;
     height: 30vh;
-}
-.btn-secondary {
-  font-size: 0.9rem;
-}
-.btn-transparent {
-  font-size: 0.9rem;
+  }
+  .btn-secondary {
+    font-size: 0.9rem;
+  }
+  .btn-transparent {
+    font-size: 0.9rem;
+  }
+
+  #instructors .body .card img {
+    width: 10rem;
+  }
+
+  #classes .body .product-card .card-body .title h3 {
+    font-size: 1.1rem;
+  }
+  .product-card:last-child {
+    display: none;
+  }
+
+  #sports-section .body {
+    flex-wrap: wrap;
+  }
+
+  .sport-type-card {
+    justify-content: center;
+    align-items: center;
+    flex-basis: 40%;
+  }
+
+  .sport-type-card .card-body {
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    height: 100%;
+  }
+  .sport-type-card .card-body p {
+    display: flex;
+    opacity: 1;
+    text-align: center;
+  }
+  .line-wide-4 {
+    width: 20rem;
+  }
 }
 
-#instructors .body .card img{
-  width: 10rem;
+#dropArea {
+  border: 2px dashed #fff;
+  border-radius: 1rem;
+  width: 30rem;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s;
 }
-
-#classes .body .product-card .card-body .title h3 {
-  font-size: 1.1rem;
+/* Highlight state on drag over */
+#dropArea.highlight {
+  border-color: #ff5401;
+  color: #ff5401;
 }
-.product-card:last-child {
+/* Optional: hide file input so only the box is visible */
+#fileInput {
   display: none;
 }
 
-#sports-section .body{
-  flex-wrap: wrap;
+#addUser {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
-.sport-type-card {
+.container {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  display: flex;
+}
+form {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 3em;
+  height: 320px;
+  border-radius: 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: 20px 20px 40px -6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-basis: 40%;
 }
-
-.sport-type-card .card-body {
-  justify-content: center;
-  align-items: stretch;
-  flex-direction: column;
-  height: 100%;
+form p {
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.7;
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 60px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-.sport-type-card .card-body p {
-  display: flex;
-  opacity: 1;
-  text-align: center;
+form a {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 12px;
 }
-.line-wide-4 {
-  width: 20rem;
+form a:hover {
+  text-shadow: 2px 2px 6px #000 40;
 }
+form a:active {
+  text-shadow: none;
+}
+form input {
+  background: transparent;
+  width: 200px;
+  padding: 1em;
+  margin-bottom: 2em;
+  border: none;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 5000px;
+  backdrop-filter: blur(5px);
+  box-shadow: 4px 4px 60px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-family: Outfit, sans-serif;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+form input:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+}
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
+}
+form input[type="button"] {
+  margin-top: 10px;
+  width: 150px;
+  font-size: 1rem;
+}
+form input[type="button"]:hover {
+  cursor: pointer;
+}
+form input[type="button"]:active {
+  background: rgba(255, 255, 255, 0.2);
+}
+form:hover {
+  margin: 4px;
+}
+::placeholder {
+  font-family: Outfit, sans-serif;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+.drop {
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 10px 10px 60px -8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  transition: all 0.2s ease;
+}
+.drop-1 {
+  height: 80px;
+  width: 80px;
+  top: -20px;
+  left: -40px;
+  z-index: -1;
+}
+.drop-2 {
+  height: 80px;
+  width: 80px;
+  bottom: -30px;
+  right: -10px;
+}
+.drop-3 {
+  height: 100px;
+  width: 100px;
+  bottom: 120px;
+  right: -50px;
+  z-index: -1;
+}
+.drop-4 {
+  height: 120px;
+  width: 120px;
+  top: -60px;
+  right: -60px;
+}
+.drop-5 {
+  height: 60px;
+  width: 60px;
+  bottom: 170px;
+  left: 90px;
+  z-index: -1;
+}
+a,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
 }
