@@ -24,6 +24,7 @@ body {
   font-size: 2rem;
   font-weight: 700;
   color: #fff;
+  text-align: center;
 }
 
 header {
@@ -36,10 +37,10 @@ header {
   position: sticky;
 }
 .logo {
-    font-family: Outfit;
-    font-size: 3rem;
-    font-weight: 600;
-    color: #ff5401;
+  font-family: Outfit;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #ff5401;
 }
 
 nav {
@@ -70,7 +71,6 @@ nav a {
   gap: 3vh;
   margin-top: -8vh;
   height: 100vh;
-  padding: 0vh 5vw;
 }
 
 #hero-section video {
@@ -79,17 +79,19 @@ nav a {
   right: 0;
   left: 0;
   object-fit: cover;
-  width: 99vw;
-  height: 100vh;
+  width: 100%;
+  height: 99vh;
   z-index: 1;
 }
 
 #hero-section .body {
   position: relative;
   z-index: 10;
-  width: 40rem;
   align-items: flex-start;
   gap: 3vh;
+  background: linear-gradient(to top, rgba(24, 23, 26, 1), rgba(0, 0, 0, 0));
+  height: 100%;
+  padding: 0rem 50rem 0rem 5rem;
 }
 
 #hero-section .body h1 {
@@ -162,7 +164,7 @@ nav a {
   display: none;
   opacity: 0;
   font-family: Outfit;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: #fff;
   transition: all 300ms ease;
@@ -173,52 +175,52 @@ nav a {
   opacity: 1;
 }
 
-#lifeStyle{
-    position: relative;
-    justify-content: flex-start;
-    gap: 5rem;
-    padding: 5vh 28vw;
+#lifeStyle {
+  position: relative;
+  justify-content: flex-start;
+  gap: 5rem;
+  padding: 5vh 20vw;
 }
 
-#lifeStyle p{
-    font-family: Outfit;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #fff;
-    text-align: center;
+#lifeStyle p {
+  font-family: Outfit;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
 }
 
-.image-container{
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: 100% 35%;
-    background-image: url(../assets/images/image-bg.svg);
-    padding: 0.5rem;
-    position: relative;
-    z-index: 10;
+.image-container {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 35%;
+  background-image: url(../assets/images/image-bg.svg);
+  padding: 0.5rem;
+  position: relative;
+  z-index: 10;
 }
 
-#lifeStyle img{
-width:28rem;
+#lifeStyle img {
+  width: 40rem;
 }
 
-.line-wide-1{
-    height: 3rem;
-    width: 12rem;
-    position: absolute;
-    right: 0;
-    bottom: 5rem;
-    background-color: #ff5401;
-    opacity: 0.2;
+.line-wide-1 {
+  height: 3rem;
+  width: 12rem;
+  position: absolute;
+  right: 0;
+  bottom: 5rem;
+  background-color: #ff5401;
+  opacity: 0.2;
 }
-.line-wide-2{
-    height: 3rem;
-    width: 25rem;
-    position: absolute;
-    right: 0;
-    bottom: 1rem;
-    background-color: #ff5401;
-    opacity: 0.2;
+.line-wide-2 {
+  height: 3rem;
+  width: 25rem;
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+  background-color: #ff5401;
+  opacity: 0.2;
 }
 
 #classes {
@@ -246,11 +248,11 @@ width:28rem;
   background-size: 100% 35%;
   background-image: url(../assets/images/image-bg.svg);
   padding: 0.5rem;
-  width: 100%;
+  /* width: 100%; */
 }
 
 #classes .body .product-card > .img-container img {
-  width: 100%;
+  width: 21rem;
   height: 30vh;
 }
 #classes .body .product-card .header .right,
@@ -266,8 +268,8 @@ width:28rem;
 #classes .body .product-card .header span {
   background-color: #ff5401;
   border-radius: 1rem;
-  width: .7rem;
-  height: .7rem;
+  width: 0.7rem;
+  height: 0.7rem;
 }
 
 #classes .body .product-card .header h4 {
@@ -308,7 +310,7 @@ width:28rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap:.5rem
+  gap: 0.5rem;
 }
 
 #classes .body .product-card .card-body .instructor,
@@ -369,181 +371,283 @@ width:28rem;
   transform: skew(20deg, 0deg);
 }
 
-
-#instructors{
-padding:3rem;
-gap: 2rem;
-position: relative;
+#instructors {
+  padding: 3rem;
+  gap: 2rem;
+  position: relative;
 }
 
-#instructors .body{
-    gap: 2rem;
-    }
-    
-.line-wide-3{
-    height: 3rem;
-    width: 12rem;
-    position: absolute;
-    left: 0;
-    bottom: 9rem;
-    background-color: #ff5401;
-    opacity: 0.2;
-}
-.line-wide-4{
-    height: 3rem;
-    width: 25rem;
-    position: absolute;
-    left: 0;
-    bottom: 5rem;
-    background-color: #ff5401;
-    opacity: 0.2;
+#instructors .body {
+  gap: 2rem;
 }
 
-#instructors .card{
-    gap:1rem
+.line-wide-3 {
+  height: 3rem;
+  width: 12rem;
+  position: absolute;
+  left: 0;
+  bottom: 9rem;
+  background-color: #ff5401;
+  opacity: 0.2;
 }
-#instructors .card:hover img{
-    outline: solid #ff5401 .1rem;
-}
-#instructors .card h3{
-    font-size: 1.5rem;
-    font-family: Outfit;
-    font-weight: 500;
-    color: #fff;
-}
-
-#instructors .card p{
-    font-size: 0.7rem;
-    font-family: Outfit;
-    font-weight: 400;
-    color: #fff;
-}
-
-#faq{
-padding:4rem
+.line-wide-4 {
+  height: 3rem;
+  width: 25rem;
+  position: absolute;
+  left: 0;
+  bottom: 5rem;
+  background-color: #ff5401;
+  opacity: 0.2;
 }
 
+#instructors .card {
+  gap: 1rem;
+  position: relative;
+  z-index: 99;
+}
+#instructors .card:hover img {
+  outline: solid #ff5401 0.1rem;
+}
+#instructors .card h3 {
+  font-size: 1.5rem;
+  font-family: Outfit;
+  font-weight: 500;
+  color: #fff;
+}
 
-  .accordion-header {
-color: #fff;
-    padding: 1.2rem;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background 0.3s;
-    font-family: 'Outfit';
-    width: 70vw;
-    position: relative;
-  }
+#instructors .card p {
+  font-size: 0.8rem;
+  font-family: Outfit;
+  font-weight: 400;
+  color: #fff;
+}
 
-  .accordion-header::after {
-    content: "+";
-    font-size: 1rem;
-    transition: transform 0.3s;
-  }
+#faq {
+  padding: 4rem;
+}
 
-  .accordion-content {
-    padding: 1rem;
-    background: rgba(255,94,0,0.3);
-    display: none;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
+.accordion-header {
+  color: #fff;
+  padding: 1.2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+  font-family: "Outfit";
+  width: 70vw;
+  position: relative;
+}
+
+.accordion-header::after {
+  content: "+";
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+
+.accordion-content {
+  padding: 1rem;
+  background: rgba(255, 94, 0, 0.3);
+  display: none;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
   transform: skew(-20deg, 0deg);
   width: 70vw;
-  }
-.accordion-divider{
-    position: absolute;
-    left:0;
-    bottom: 0;
-    height:.1rem;
-    width:72vw;
-    background-color: #fff;
-    transition: width 0.3s ease-out;
-
 }
-.accordion-divider.active{
-    width:85vw;
+.accordion-divider {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.1rem;
+  width: 72vw;
+  background-color: #fff;
+  transition: width 0.3s ease-out;
 }
-  .accordion-content p{
-    font-size:1rem;
-    font-family: Outfit;
-    font-weight: 400;
-    color: #fff;
+.accordion-divider.active {
+  width: 85vw;
+}
+.accordion-content p {
+  font-size: 1rem;
+  font-family: Outfit;
+  font-weight: 400;
+  color: #fff;
   transform: skew(20deg, 0deg);
-  }
-
-  .active .accordion-content {
-    display: block;
-  }
-
-  .active .accordion-header::after {
-    transform: rotate(180deg);
-  }
-
-
-
-
-
-
-footer{
-    gap: 5rem;
-    background-image: url(../assets/images/footer-bg.png);
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    padding:2rem;
 }
 
-footer img{
-    width:8rem;
+.active .accordion-content {
+  display: block;
 }
 
-footer .footer-text{
-width:70vw;
-font-size: 1.2rem;
-font-family: Outfit;
-font-weight: 500;
-color: #fff;
-text-align: center;
-}
-footer .social-media{
-gap:1vw;
+.active .accordion-header::after {
+  transform: rotate(180deg);
 }
 
-footer .social-media img{
-    width:2rem;
-    height:2rem;
-}
-footer hr{
-    width:70vw;
-    height: .1rem;
-    background-color: #fff;
-}
-
-footer p{
-    font-size: 1.2rem;
-font-family: Outfit;
-font-weight: 500;
-color: #fff;
+footer {
+  gap: 5rem;
+  background-image: url(../assets/images/footer-bg.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 2rem;
 }
 
-a{
-    cursor: pointer;
+footer img {
+  width: 8rem;
+}
+
+footer .footer-text {
+  width: 70vw;
+  font-size: 1.2rem;
+  font-family: Outfit;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+}
+footer .social-media {
+  gap: 1vw;
+}
+
+footer .social-media img {
+  width: 2rem;
+  height: 2rem;
+}
+footer hr {
+  width: 70vw;
+  height: 0.1rem;
+  background-color: #fff;
+}
+
+footer p {
+  font-size: 1.2rem;
+  font-family: Outfit;
+  font-weight: 500;
+  color: #fff;
+}
+
+a {
+  cursor: pointer;
 }
 
 @keyframes vibrate {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-3px); }
-    40% { transform: translateX(3px); }
-    60% { transform: translateX(-3px); }
-    80% { transform: translateX(3px); }
-    100% { transform: translateX(0); }
+  0% {
+    transform: translateX(0);
   }
+  20% {
+    transform: translateX(-3px);
+  }
+  40% {
+    transform: translateX(3px);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
-  .vibrate {
-    animation: vibrate 0.3s ease-in-out;
-    color: red !important; /* Change color to red */
-  }
+.vibrate {
+  animation: vibrate 0.3s ease-in-out;
+  color: red !important; /* Change color to red */
+}
+
+.p-h-2{
+  padding:0vh 2vw
+}
+
+
+#toggle {
+  display: none;
+}
+
+/**
+  Hamburger
+**/
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 5em;
+  right: 5%;
+  margin-left: -2em;
+  margin-top: -45px;
+  width: 2em;
+  height: 45px;
+  z-index: 1000;
+}
+
+.hamburger div {
+  position: relative;
+  width: 3em;
+  height: 7px;
+  border-radius: 3px;
+  background-color: #ff5401;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav{
+  display: none;
+}
+
+@media (max-width: 1025px) {
+  header {
+    padding: 1rem 2rem;
+}
+
+  #hero-section .body {
+    padding: 0rem 20rem 0rem 5rem;
+}
+#classes .body .product-card > .img-container {
+  background-size: 100% 20%;
+}
+  #classes .body .product-card > .img-container img {
+    width: 15rem;
+    height: 30vh;
+}
+.btn-secondary {
+  font-size: 0.9rem;
+}
+.btn-transparent {
+  font-size: 0.9rem;
+}
+
+#instructors .body .card img{
+  width: 10rem;
+}
+
+#classes .body .product-card .card-body .title h3 {
+  font-size: 1.1rem;
+}
+.product-card:last-child {
+  display: none;
+}
+
+#sports-section .body{
+  flex-wrap: wrap;
+}
+
+.sport-type-card {
+  justify-content: center;
+  align-items: center;
+  flex-basis: 40%;
+}
+
+.sport-type-card .card-body {
+  justify-content: center;
+  align-items: stretch;
+  flex-direction: column;
+  height: 100%;
+}
+.sport-type-card .card-body p {
+  display: flex;
+  opacity: 1;
+  text-align: center;
+}
+.line-wide-4 {
+  width: 20rem;
+}
+}
