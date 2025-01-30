@@ -1,7 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="title" content="Click Fit">
+    <meta name="description" content="Fitness Club">
+    <meta name="author" content="Azlarab Oujdad">
+    <meta name="robots" content="noindex, nofollow">
+
     <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="./css/small-styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +26,26 @@
         <a  id="vibratingLink"><span>About Us</span></a>
         <a  id="vibratingLink"><span>Gallery</span></a>
       </nav>
-      <a  id="vibratingLink" class="flex btn-secondary">Contact Us</a>
+      <a  id="vibratingLink" class="flex btn-secondary contact-us">Contact Us</a>
+     
+<input id="toggle" type="checkbox"></input>
+
+<label for="toggle" class="hamburger">
+  <div class="top-bun"></div>
+  <div class="meat"></div>
+  <div class="bottom-bun"></div>
+</label>
+
+<div class="nav">
+  <div class="nav-wrapper">
+    <nav class="nav-mobile">
+      <a href="#" id="vibratingLink"><span>HOME</span></a><br>
+      <a href="#" id="vibratingLink"><span>ABOUT</span></a><br>
+      <a href="#" id="vibratingLink"><span>WORK</span></a><br>
+      <a href="#" id="vibratingLink"><span>SERVICES</span></a>
+    </nav>
+  </div>
+</div>
     </header>
     <section id="hero-section" class="flex-column">
       <video autoplay muted loop>
@@ -112,7 +139,7 @@
       <div class="flex body">
         <div class="flex-column product-card">
           <div class="img-container">
-            <img src="./assets/images/yoga.jpg" />
+            <img src="./assets/images/yoga-product-1.jpg" />
           </div>
           <div class="flex header">
             <div class="flex right">
@@ -148,28 +175,28 @@
         </div>
         <div class="flex-column product-card">
           <div class="img-container">
-            <img src="./assets/images/yoga.jpg" />
+            <img src="./assets/images/fitness-product.jpg" />
           </div>
           <div class="flex header">
             <div class="flex right">
               <span></span>
-              <h4>Yoga</h4>
+              <h4>Fitness</h4>
             </div>
             <div class="flex left">
               <img src="./assets/images/group-ppl.svg" />
-              <h4>29</h4>
+              <h4>34</h4>
               <h4>Students</h4>
             </div>
           </div>
           <div class="flex-column card-body">
             <div class="flex title">
-              <h3>Strength & Sweat</h3>
-              <p><img src="./assets//images/timer-icon.svg" /> 2 H</p>
+              <h3>Total Body Burnout</h3>
+              <p><img src="./assets//images/timer-icon.svg" /> 4 H</p>
             </div>
-            <p class="instructor">Instructor: Esther Howard</p>
+            <p class="instructor">Instructor: Wade Warren</p>
             <ul>
-              <li>No. of Classes: 30</li>
-              <li>Difficulty: Beginner</li>
+              <li>No. of Classes: 45</li>
+              <li>Difficulty: Medium</li>
             </ul>
             <div class="flex footer">
               <a  id="vibratingLink" class="flex btn-secondary"><span>Learn more</span></a>
@@ -181,7 +208,7 @@
         </div>
         <div class="flex-column product-card">
           <div class="img-container">
-            <img src="./assets/images/yoga.jpg" />
+            <img src="./assets/images/yoga-product-2.jpg" />
           </div>
           <div class="flex header">
             <div class="flex right">
@@ -190,19 +217,19 @@
             </div>
             <div class="flex left">
               <img src="./assets/images/group-ppl.svg" />
-              <h4>29</h4>
+              <h4>60</h4>
               <h4>Students</h4>
             </div>
           </div>
           <div class="flex-column card-body">
             <div class="flex title">
-              <h3>Strength & Sweat</h3>
-              <p><img src="./assets//images/timer-icon.svg" /> 2 H</p>
+              <h3>Bootcamp Challenge</h3>
+              <p><img src="./assets//images/timer-icon.svg" /> 3 H</p>
             </div>
-            <p class="instructor">Instructor: Esther Howard</p>
+            <p class="instructor">Instructor: Robert Fox</p>
             <ul>
-              <li>No. of Classes: 30</li>
-              <li>Difficulty: Beginner</li>
+              <li>No. of Classes: 52</li>
+              <li>Difficulty: Hard</li>
             </ul>
             <div class="flex footer">
               <a  id="vibratingLink" class="flex btn-secondary"><span>Learn more</span></a>
@@ -213,6 +240,7 @@
           </div>
         </div>
       </div>
+      <a id="vibratingLink" class="flex btn-secondary"><span  class="p-h-2">See all</span></a>
     </section>
     <section id="instructors" class="flex-column">
         <div class="line-wide-3"></div>
@@ -286,7 +314,7 @@
         <a  id="vibratingLink"><img src="./assets/images/tiktok-icon.svg" /></a>
       </div>
       <hr />
-      <p>&#169; SPYRO 2023. All rights reserved.</p>
+      <p>&#169; Click Fit 2023. All rights reserved.</p>
     </footer>
     <script src="./js/main.js"></script>
   </body>

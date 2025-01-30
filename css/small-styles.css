@@ -1,0 +1,116 @@
+@media (max-width: 720px) {
+    header {
+        padding: 1rem 2rem;
+    }
+
+    nav {
+display: none !important;
+    }
+
+    #hero-section .body {
+        padding: 0rem 1rem 0rem 1rem;
+    }
+
+    #sports-section .body {
+        gap: 3rem;
+        flex-direction: column !important;
+    }
+
+    #sports-section {
+        gap: 10vh;
+        padding: 3rem;
+    }
+
+
+    #instructors .body {
+        flex-direction: column;
+    }
+
+    #lifeStyle {
+        padding: 5vh 2rem;
+    }
+    #lifeStyle img {
+        width: 20rem;
+    }
+
+    #classes .body {
+        gap: 4vw;
+        flex-direction: column;
+    }
+
+    .accordion-content {
+        transform: skew(-5deg, 0deg);
+    }
+    .accordion-content p {
+        transform: skew(5deg, 0deg);
+    }
+    .contact-us{
+      display: none;
+    }
+    .hamburger {
+        display: grid;
+      }
+     
+/**
+Nav Styles
+**/
+.nav {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(24, 23, 26, 1), rgba(0, 0, 0, 0.7));
+    top: -100%; left: 0; right: 0; bottom: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    transform: scale(0);
+    z-index: 500;
+  }
+  .nav-wrapper {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-mobile {
+    text-align: left;
+    margin-top: 15vh;
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  .nav-mobile a {
+    position: relative;
+    text-decoration: none;
+    font-family: Outfit;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    display: inline-block;
+    transition: color 0.2s ease-in-out;
+    letter-spacing: 1px;
+  }
+  /**
+  Animations
+  **/
+  #toggle:checked + .hamburger .top-bun {
+    transform: rotate(-45deg);
+    margin-top: 25px;
+  }
+  #toggle:checked + .hamburger .bottom-bun {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+  #toggle:checked + .hamburger .meat {
+    transform: rotate(45deg);
+    margin-top: -7px;
+  }
+  
+  #toggle:checked + .hamburger + .nav {
+    top: 0;
+    transform: scale(1);
+  } 
+  }
