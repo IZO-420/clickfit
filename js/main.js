@@ -138,4 +138,34 @@ $(document).ready(function () {
       },
     });
   });
+
+  $(document).on("scroll", function () {
+    var pageTop = $(document).scrollTop()
+    var pageBottom = pageTop + $(window).height()
+    var fade=$(".fadein")
+    var tags = [...$(".fadein"),...$(".fadein-top")]
+    var titles = $(".section-title")
+
+    for (var i = 0; i < tags.length; i++) {
+      var tag = tags[i]
+
+      if ($(tag).offset().top < pageBottom) {
+        $(tag).addClass("visible")
+      } else {
+        $(tag).removeClass("visible")
+      }
+    }
+
+    for (var i = 0; i < titles.length; i++) {
+      var tag = titles[i]
+
+      if ($(tag).offset().top < pageBottom) {
+        $(tag).addClass("zoomed-in")
+      } else {
+        $(tag).removeClass("zoomed-in")
+      }
+    }
+  })
 });
+
+

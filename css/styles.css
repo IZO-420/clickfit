@@ -25,6 +25,15 @@ body {
   font-weight: 700;
   color: #fff;
   text-align: center;
+  transform: scale(0.8); /* Slightly smaller than its final size */
+  opacity: 0; /* Transparent */
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+/* Final state when the element is in the viewport */
+.section-title.zoomed-in {
+  transform: scale(1); /* Restore to original size */
+  opacity: 1; /* Fully opaque */
 }
 
 header {
@@ -52,6 +61,32 @@ nav a {
   font-family: Outfit;
   font-weight: 500;
   color: #fff;
+}
+
+nav a:hover {
+  animation: float 2s ease-in-out infinite;
+}
+
+.fadein {
+  opacity: 0;
+  transition: all 1.5s;
+  transform: translate(0, 100px);
+}
+
+.fadein.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.fadein-top {
+  opacity: 0;
+  transition: all 1.5s;
+  transform: translate(0, -100px);
+}
+
+.fadein-top.visible {
+  opacity: 1;
+  transform: translate(0, 0);
 }
 
 .btn-primary {
@@ -351,6 +386,7 @@ nav a {
   color: #fff;
   background-color: #ff5401;
   transform: skew(-20deg, 0deg);
+  transition: padding 0.4s ease;
 }
 
 .btn-transparent {
@@ -364,6 +400,20 @@ nav a {
   border-style: solid;
   border-width: 0.1rem;
   border-color: #fff;
+  transition: padding 0.4s ease;
+}
+
+
+.btn-secondary:hover,.btn-transparent:hover {
+  padding: 0.5rem 2rem;
+}
+
+.btn-secondary span,.btn-transparent span {
+  transition: opacity 0.3s ease;
+}
+
+.btn-secondary:hover span,.btn-transparent:hover span {
+  opacity: 0.8;
 }
 
 .btn-secondary span,
@@ -524,10 +574,25 @@ footer p {
   font-family: Outfit;
   font-weight: 500;
   color: #fff;
+  text-align: center;
 }
 
 a {
   cursor: pointer;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes vibrate {
@@ -556,10 +621,9 @@ a {
   color: red !important; /* Change color to red */
 }
 
-.p-h-2{
-  padding:0vh 2vw
+.p-h-2 {
+  padding: 0vh 2vw;
 }
-
 
 #toggle {
   display: none;
@@ -589,67 +653,82 @@ a {
   transition: all 0.3s ease-in-out;
 }
 
-.nav{
+.nav {
   display: none;
 }
-
+@media (min-width: 2000px) {
+  #hero-section video {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 50vh;
+    z-index: 1;
+  }
+  #hero-section .body {
+    height: 100%;
+    width: 100%;
+  }
+}
 @media (max-width: 1025px) {
   header {
     padding: 1rem 2rem;
-}
+  }
 
   #hero-section .body {
-    padding: 0rem 20rem 0rem 5rem;
-}
-#classes .body .product-card > .img-container {
-  background-size: 100% 20%;
-}
+    padding: 0rem 10rem 0rem 5rem;
+  }
+  #classes .body .product-card > .img-container {
+    background-size: 100% 20%;
+  }
   #classes .body .product-card > .img-container img {
     width: 15rem;
     height: 30vh;
-}
-.btn-secondary {
-  font-size: 0.9rem;
-}
-.btn-transparent {
-  font-size: 0.9rem;
-}
+  }
+  .btn-secondary {
+    font-size: 0.9rem;
+  }
+  .btn-transparent {
+    font-size: 0.9rem;
+  }
 
-#instructors .body .card img{
-  width: 10rem;
-}
+  #instructors .body .card img {
+    width: 10rem;
+  }
 
-#classes .body .product-card .card-body .title h3 {
-  font-size: 1.1rem;
-}
-.product-card:last-child {
-  display: none;
-}
+  #classes .body .product-card .card-body .title h3 {
+    font-size: 1.1rem;
+  }
+  .product-card:last-child {
+    display: none;
+  }
 
-#sports-section .body{
-  flex-wrap: wrap;
-}
+  #sports-section .body {
+    flex-wrap: wrap;
+  }
 
-.sport-type-card {
-  justify-content: center;
-  align-items: center;
-  flex-basis: 40%;
-}
+  .sport-type-card {
+    justify-content: center;
+    align-items: center;
+    flex-basis: 40%;
+  }
 
-.sport-type-card .card-body {
-  justify-content: center;
-  align-items: stretch;
-  flex-direction: column;
-  height: 100%;
-}
-.sport-type-card .card-body p {
-  display: flex;
-  opacity: 1;
-  text-align: center;
-}
-.line-wide-4 {
-  width: 20rem;
-}
+  .sport-type-card .card-body {
+    justify-content: center;
+    align-items: stretch;
+    flex-direction: column;
+    height: 100%;
+  }
+  .sport-type-card .card-body p {
+    display: flex;
+    opacity: 1;
+    text-align: center;
+  }
+  .line-wide-4 {
+    width: 20rem;
+  }
 }
 
 #dropArea {
@@ -668,17 +747,17 @@ a {
 /* Highlight state on drag over */
 #dropArea.highlight {
   border-color: #ff5401;
-  color:#ff5401;
+  color: #ff5401;
 }
 /* Optional: hide file input so only the box is visible */
 #fileInput {
   display: none;
 }
 
-#addUser{
+#addUser {
   position: relative;
-  height:80vh;
-  width:100%;
+  height: 80vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -745,14 +824,13 @@ form input {
   font-weight: 500;
   transition: all 0.2s ease-in-out;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-
-
 }
 form input:hover {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
 }
-form input[type="email"]:focus, form input[type="password"]:focus {
+form input[type="email"]:focus,
+form input[type="password"]:focus {
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 4px 4px 60px 8px rgba(0, 0, 0, 0.2);
 }
@@ -819,7 +897,10 @@ form:hover {
   left: 90px;
   z-index: -1;
 }
-a, input:focus, select:focus, textarea:focus, button:focus {
+a,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
   outline: none;
 }
-
